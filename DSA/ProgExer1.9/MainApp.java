@@ -45,6 +45,8 @@ public class MainApp {
                     break;
                 case 4 : System.exit(0);
                     break;
+                default :
+                    System.out.println("Invalid input, try again.");
             }
         }
 
@@ -66,13 +68,21 @@ public class MainApp {
     }
 
     public static void showSoftware () {
-        System.out.println("Products in the BST:");
-        node.inOrderTraversal(node.root);
+        
     }
 
     public static void addSoftware () {
 
-        
+        System.out.println("Products Availble: \n");
+        System.out.printf("%-30s  %-10s  %-10s  %-5s\n", 
+            "Software Name",
+            "Version",
+            "Quantity",
+            "Price",
+            "\n");
+        node.inOrderTraversal(node.root);
+
+        System.out.println("");
 
     }
 }

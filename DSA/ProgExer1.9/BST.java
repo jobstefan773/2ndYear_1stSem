@@ -25,8 +25,6 @@ class BST {
         return root;
     }
 
-    // You can add additional methods for tree traversal, searching, etc.
-
     public void inOrderTraversal(BSTNode root) {
         if (root != null) {
             inOrderTraversal(root.left);
@@ -36,9 +34,11 @@ class BST {
     }
 
     private void displayProduct(Software item) {
-        System.out.println("Name: " + item.softName +
-                ", Version: " + item.version +
-                ", Quantity: " + item.quantity +
-                ", Price: ₱" + item.price);
+        System.out.printf("%-30s  %-10s  %-10s  %-5s\n", 
+                item.softName,
+                item.version,
+                item.quantity,
+                "$" + String.format("%.2f", item.price),
+                "\n");
     }
 }
