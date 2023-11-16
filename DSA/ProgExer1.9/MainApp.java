@@ -1,30 +1,28 @@
-import java.util.*;
-import java.io.*;
-
-//Hoy bati kag nawng!
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class MainApp {
     public static Scanner userInput = new Scanner (System.in);
     public static void main(String[] args) {
+        BST node = new BST();
 
         //txt to BST---------------------------------------------------------------------------
         try {
 
             File file = new File ("software.txt");
             Scanner fileInput = new Scanner(file);
-            BST tree = new BST();
-            Software node = new Software(null, 0, 0, 0);
             
 
             while(fileInput.hasNextLine()) {
                 String softName = fileInput.nextLine();
                 userInput.nextLine();
-                double version = fileInput.nextDouble();
+                String version = fileInput.nextLine();
+                userInput.nextLine();
                 int quantity = fileInput.nextInt();
                 double price = fileInput.nextDouble();
 
-                node = new Software(softName, version, quantity, price);
-                tree.insert(node);
+                node.insert(new Software(softName, version, quantity, price));
 
             }
 
@@ -35,10 +33,8 @@ public class MainApp {
             e.printStackTrace();
         }
 
-        //-------------------------------------------------------------------
-        int choice;
-
         //MENU---------------------------------------------------------------
+        int choice;
         while (true) {
             choice = menu();
 

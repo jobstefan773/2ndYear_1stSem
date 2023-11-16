@@ -1,18 +1,14 @@
 public class BSTNode {
-    protected Software key;
+    protected Software item;
     protected BSTNode left, right;
 
     public BSTNode() {
         left = right = null;
     }
 
-    public BSTNode(Software el) {
-        this(el, null, null);
+    public BSTNode(Software item) {
+        this.item = item;
+        this.left = this.right = null;
     }
 
-    public BSTNode(Software el, BSTNode lt, BSTNode rt) {
-        key = el;
-        left = lt;
-        right = rt;
-    }
 }
