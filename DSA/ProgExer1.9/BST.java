@@ -6,7 +6,7 @@ class BST {
     }
 
     public void insert(Software item) {
-        root = insertRecursive(root, item);
+        root = insertRecursive(root, item); 
     }
 
     private BSTNode insertRecursive(BSTNode root, Software item) {

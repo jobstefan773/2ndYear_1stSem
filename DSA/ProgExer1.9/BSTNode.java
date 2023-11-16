@@ -8,7 +8,7 @@ public class BSTNode {
 
     public BSTNode(Software item) {
         this.item = item;
-        this.left = this.right = null;
+        this.left = this.right = null; 
     }
 
 }

@@ -64,7 +64,7 @@ public class MainApp {
         choice = userInput.nextInt();
         System.out.println("--------------------------------------------");
 
-        return choice;
+        return choice; 
     }
 
     public static void showSoftware () {
