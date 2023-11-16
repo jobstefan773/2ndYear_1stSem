@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+//Hoy bati kag nawng!
+
 public class MainApp {
     public static Scanner userInput = new Scanner (System.in);
     public static void main(String[] args) {
