@@ -1,5 +1,5 @@
 class BST {
-    private BSTNode root;
+    BSTNode root;
 
     public BST() {
         this.root = null;
@@ -39,6 +39,6 @@ class BST {
         System.out.println("Name: " + item.softName +
                 ", Version: " + item.version +
                 ", Quantity: " + item.quantity +
-                ", Price: $" + item.price);
+                ", Price: ₱" + item.price);
     }
 }

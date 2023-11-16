@@ -4,23 +4,21 @@ import java.util.Scanner;
 
 public class MainApp {
     public static Scanner userInput = new Scanner (System.in);
-    public static void main(String[] args) {
-        BST node = new BST();
+    public static BST node = new BST();
+    public static void main(String[] args) {    
 
         //txt to BST---------------------------------------------------------------------------
         try {
 
             File file = new File ("software.txt");
-            Scanner fileInput = new Scanner(file);
-            
+            Scanner fileInput = new Scanner(file);  
+            fileInput.useDelimiter(",\\s*");
 
             while(fileInput.hasNextLine()) {
                 String softName = fileInput.nextLine();
-                userInput.nextLine();
                 String version = fileInput.nextLine();
-                userInput.nextLine();
-                int quantity = fileInput.nextInt();
-                double price = fileInput.nextDouble();
+                int quantity = Integer.parseInt(fileInput.nextLine());
+                double price = Double.parseDouble(fileInput.nextLine());
 
                 node.insert(new Software(softName, version, quantity, price));
 
@@ -33,13 +31,13 @@ public class MainApp {
             e.printStackTrace();
         }
 
-        //MENU---------------------------------------------------------------
+        //MENU-------------------------------------------------------------------------------
         int choice;
         while (true) {
             choice = menu();
 
             switch (choice) {
-                case 1 : ;
+                case 1 : showSoftware();
                     break;
                 case 2 : addSoftware();
                     break;
@@ -65,6 +63,11 @@ public class MainApp {
         System.out.println("--------------------------------------------");
 
         return choice;
+    }
+
+    public static void showSoftware () {
+        System.out.println("Products in the BST:");
+        node.inOrderTraversal(node.root);
     }
 
     public static void addSoftware () {
