@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MainApp {
-    public static Scanner userInput = new Scanner (System.in);
-    public static BST node = new BST();
+    private static Scanner userInput = new Scanner (System.in);
+    public static BST shelf = new BST();
     public static void main(String[] args) {    
 
         //txt to BST---------------------------------------------------------------------------
@@ -20,7 +20,7 @@ public class MainApp {
                 int quantity = Integer.parseInt(fileInput.nextLine());
                 double price = Double.parseDouble(fileInput.nextLine());
 
-                node.insert(new Software(softName, version, quantity, price));
+                shelf.insert(new Software(softName, version, quantity, price));
 
             }
 
@@ -39,7 +39,7 @@ public class MainApp {
             switch (choice) {
                 case 1 : showSoftware();
                     break;
-                case 2 : addSoftware();
+                case 2 : shelf.addSoftware();
                     break;
                 case 3 : ;
                     break;
@@ -68,21 +68,15 @@ public class MainApp {
     }
 
     public static void showSoftware () {
-        
-    }
 
-    public static void addSoftware () {
-
-        System.out.println("Products Availble: \n");
+        System.out.println("Products on Shelf: \n");
         System.out.printf("%-30s  %-10s  %-10s  %-5s\n", 
             "Software Name",
             "Version",
             "Quantity",
             "Price",
             "\n");
-        node.inOrderTraversal(node.root);
-
-        System.out.println("");
+        shelf.inOrderTraversal(shelf.root);
 
     }
 }
