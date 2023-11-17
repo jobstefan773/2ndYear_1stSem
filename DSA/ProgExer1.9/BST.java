@@ -88,7 +88,7 @@ class BST {
 
         if (checkItem != null) {
             System.out.print("Enter Quantity to sell: ");
-            int toSell = userInput.nextInt();
+            int toSell = Integer.parseInt(userInput.nextLine());
 
             if (toSell <= checkItem.quantity) {
                 checkItem.quantity -= toSell;
