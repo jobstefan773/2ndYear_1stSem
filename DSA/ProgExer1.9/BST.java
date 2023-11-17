@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class BST {
-    public static Scanner userInput = new Scanner(System.in);
+    Scanner userInput = new Scanner(System.in);
 
     BSTNode root;
 
