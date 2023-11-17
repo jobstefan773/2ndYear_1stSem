@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 class BST {
+    public static Scanner userInput = new Scanner(System.in);
+
     BSTNode root;
 
     public BST() {
@@ -45,7 +47,6 @@ class BST {
     }
 
     public void addSoftware () {
-        Scanner userInput = new Scanner(System.in);
 
         System.out.print("Software Name: ");
         String softName = userInput.nextLine();
@@ -70,10 +71,8 @@ class BST {
             double price = Double.parseDouble(userInput.nextLine());
 
             insert(new Software(softName, version, quantity, price));
-            System.out.println("New Software added successfully!");
+            System.out.print("New Software added successfully!\n");
         }
-
-        userInput.close();
     }
 
     public Software search (String softName, String version) {

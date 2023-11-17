@@ -39,7 +39,7 @@ public class MainApp {
             switch (choice) {
                 case 1 : showSoftware();
                     break;
-                case 2 : shelf.addSoftware();
+                case 2 : addSoftware();
                     break;
                 case 3 : ;
                     break;
@@ -78,5 +78,9 @@ public class MainApp {
             "\n");
         shelf.inOrderTraversal(shelf.root);
 
+    }
+
+    public static void addSoftware () {
+        shelf.addSoftware();
     }
 }
