@@ -41,7 +41,7 @@ public class MainApp {
                     break;
                 case 2 : addSoftware();
                     break;
-                case 3 : ;
+                case 3 : sellSoftware();
                     break;
                 case 4 : System.exit(0);
                     break;
@@ -57,7 +57,7 @@ public class MainApp {
         System.out.println("--------------------------------------------");
         System.out.println("1: Show Softwares");
         System.out.println("2: Add Softwares");
-        System.out.println("3: Sell");
+        System.out.println("3: Sell Software");
         System.out.println("4: Exit");
         System.out.println("--------------------------------------------");
         System.out.print("Enter Choice: ");
@@ -82,5 +82,9 @@ public class MainApp {
 
     public static void addSoftware () {
         shelf.addSoftware();
+    }
+
+    public static void sellSoftware () {
+
     }
 }
