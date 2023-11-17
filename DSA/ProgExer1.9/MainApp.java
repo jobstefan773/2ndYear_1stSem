@@ -85,6 +85,6 @@ public class MainApp {
     }
 
     public static void sellSoftware () {
-
+        shelf.sellSoftware();
     }
 }

@@ -50,17 +50,18 @@ class BST {
 
         System.out.print("Software Name: ");
         String softName = userInput.nextLine();
+        
         System.out.print("Software Version: ");
         String version = userInput.nextLine();
 
-        Software existing = search(softName, version);
+        Software checkItem = search(softName, version);
 
-        if (existing != null) {
+        if (checkItem != null) {
 
             System.out.println("This Software already exists!");
-            System.out.print("Enter Quantity: ");
+            System.out.print("Enter Quantity to add: ");
             int toAdd = Integer.parseInt(userInput.nextLine());
-            existing.quantity += toAdd;
+            checkItem.quantity += toAdd;
             System.out.println("Updated successfully!");
 
         } else {
@@ -72,6 +73,36 @@ class BST {
 
             insert(new Software(softName, version, quantity, price));
             System.out.print("New Software added successfully!\n");
+        }
+    }
+
+    public void sellSoftware () {
+
+        System.out.print("Software Name: ");
+        String softName = userInput.nextLine();
+
+        System.out.print("Software Version: ");
+        String version = userInput.nextLine();
+
+        Software checkItem = search(softName, version);
+
+        if (checkItem != null) {
+            System.out.print("Enter Quantity to sell: ");
+            int toSell = userInput.nextInt();
+
+            if (toSell <= checkItem.quantity) {
+                checkItem.quantity -= toSell;
+
+                if (checkItem.quantity == 0) {
+                    root = remove(root, checkItem);
+                }
+
+                System.out.println("Sale successful! Remaining quantity: " + checkItem.quantity);
+            } else {
+                System.out.println("Insufficient package in stock to sell.");
+            }
+        } else {
+            System.out.println("Software not found.");
         }
     }
 
@@ -93,6 +124,41 @@ class BST {
         } else {
             return searchRecursive(root.right, softName, version);
         }
+    }
+
+    private BSTNode remove(BSTNode root, Software item) {
+        if (root == null) {
+            return null;
+        }
+
+        int compareResult = item.softName.compareTo(root.item.softName);
+
+        if (compareResult < 0) {
+            root.left = remove(root.left, item);
+        } else if (compareResult > 0) {
+            root.right = remove(root.right, item);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            root.item = minValue(root.right);
+
+            root.right = remove(root.right, root.item);
+        }
+
+        return root;
+    }
+
+    private Software minValue(BSTNode root) {
+        Software minValueProduct = root.item;
+        while (root.left != null) {
+            minValueProduct = root.left.item;
+            root = root.left;
+        }
+        return minValueProduct;
     }
 
 }
