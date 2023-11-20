@@ -17,15 +17,22 @@ class BST {
         if (root == null) {
             return new BSTNode(item);
         }
-
-        int compareResult = item.softName.compareTo(root.item.softName);
-
-        if (compareResult < 0) {
+    
+        int compareName = item.softName.compareTo(root.item.softName);
+    
+        if (compareName < 0) {
             root.left = insertRecursive(root.left, item);
-        } else if (compareResult > 0) {
+        } else if (compareName > 0) {
             root.right = insertRecursive(root.right, item);
+        } else {
+            int compareVersion = item.version.compareTo(root.item.version);
+            if (compareVersion < 0) {
+                root.left = insertRecursive(root.left, item);
+            } else if (compareVersion > 0) {
+                root.right = insertRecursive(root.right, item);
+            }
         }
-
+    
         return root;
     }
 
