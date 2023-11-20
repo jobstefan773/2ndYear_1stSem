@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args){
         
         ArrayList<String> letters = new ArrayList<>();
-        File file = new File("M:\\codes\\2ndYear_1stSem\\DSA\\GraphImplementation\\graph.txt");
+        File file = new File("graph.txt");
         Scanner fileInput = new Scanner(file);
 
         while (fileInput.hasNextLine()) {
