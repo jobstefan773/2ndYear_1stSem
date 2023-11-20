@@ -2,8 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-//yawa ka 
-
 public class MainApp {
     private static Scanner userInput = new Scanner (System.in);
     public static BST shelf = new BST();
