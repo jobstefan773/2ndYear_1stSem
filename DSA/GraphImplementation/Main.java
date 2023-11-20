@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException{
         
         ArrayList<String> letters = new ArrayList<>();
         File file = new File("graph.txt");
