@@ -1,0 +1,48 @@
+create database car_dealership;
+
+
+create table employee (
+lastname varchar (20),
+middlename varchar (20),
+firstname varchar (20),
+dob DATE,
+city_address varchar (20),
+province_address varchar (20),
+zipcode_address varchar (4),
+contact varchar (11),
+email varchar (30));
+
+
+create table customer (
+lastname varchar (20),
+middlename varchar (20),
+firstname varchar (20),
+dob DATE,
+city_address varchar (20),
+province_address varchar (20),
+zipcode_address varchar (4),
+contact varchar (11),
+email varchar (30));
+
+
+create table invoice (
+date DATE,
+total_amount double;
+
+
+create table car (,
+brand varchar (20),
+type varchar (20),
+model varchar (20),
+color varchar (20));
+
+create table car_parts (
+part_id int primary key not null auto_increment;
+part_name varchar (20),
+part_t
+price int,
+
+
+----------------------------------
+alter table "name"
+add "name_id" int primary key not null auto_increment;
