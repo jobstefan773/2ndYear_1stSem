@@ -15,52 +15,54 @@ public class Student {
     public void display() {    	
         System.out.printf("ID: %-8s  Name: %-20s  Sex: %c  Course: %-8s  Year: %d\n", studentid, (lastname + ", " + firstname), gender, course, yearlevel );
     }
-    
-    public void setGender(char gender){
-        this.gender = gender;
-    }
-    
-    public char getGender(){
-        return gender;
-    }
-    
-    public void setLastname(String lastname){
-        this.lastname = lastname;
-    }
-    
-    public String getLastname(){
+
+    public String getLastname() {
         return lastname;
     }
-    
-    public void setFirstname(String firstname){
-        this.firstname = firstname;
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-    
+
     public String getFirstname() {
         return firstname;
     }
-    
-    public void setStudentId(String studentid){
-        this.studentid = studentid;
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
-    
-    public String getStudentId(){
+
+    public String getStudentid() {
         return studentid;
     }
-    
-    public void setCourse(String course){
-        this.course = course;
+
+    public void setStudentid(String studentid) {
+        this.studentid = studentid;
     }
-    
-    public String getCourse(){
+
+    public String getCourse() {
         return course;
     }
-    
-    public void setYearLevel(int yearlevel){
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getYearlevel() {
+        return yearlevel;
+    }
+
+    public void setYearlevel(int yearlevel) {
         this.yearlevel = yearlevel;
     }
     
-    public int getYearLevel(){
-        return yearlevel;
-    }
+    
 }

@@ -7,6 +7,9 @@ public class Student {
         this.firstName = firstName;
     }
 
+    public Student(String lastname2, String firstname2, String studentid, String course, char gender, int yearlevel) {
+    }
+
     public String toString() {
         return lastName + ", " + firstName;
     }

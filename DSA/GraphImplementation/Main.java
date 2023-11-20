@@ -7,5 +7,8 @@ public class Main {
         File file = new File("graph.txt");
         Scanner fileInput = new Scanner(file);
 
+
+        fileInput.close();
+
     }
 }

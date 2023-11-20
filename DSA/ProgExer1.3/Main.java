@@ -22,7 +22,7 @@ public class Main {
                 String course = fileInput.nextLine();
                 int yearlevel = Integer.parseInt(fileInput.nextLine());
 
-                Student.add(new Student(lastname, firstname, studentid, course, gender, yearlevel));
+                Student.add(new Student(lastname, firstname, studentid, course, gender,yearlevel));
 
             }   
 
