@@ -1,0 +1,11 @@
+ADD:
+INSER into tablename (columnA, columnB, columnC) VALUES ("newA", "newB", "newC");
+
+UPDATE: 
+UPDATE tablename SET columnA = 'newA', columnB = 'newB' WHERE primaryKey = 'Key';
+
+DELETE:
+DELETE from tablename WHERE primarykey = 'Key'
+
+FIND
+SELECT * from tablename WHERE primarykey = 'Key'
