@@ -9,3 +9,8 @@ DELETE from tablename WHERE primarykey = 'Key'
 
 FIND
 SELECT * from tablename WHERE primarykey = 'Key'
+
+PARA MAG INITIATE UG PRIMARY KEY AND FOREIGN KEY AT THE SAME TIME
+INSERT INTO product (name, price) VALUES ('TEST3', '300');
+SET @last_id_in_product = LAST_INSERT_ID();
+INSERT INTO stock (fk_product_id, quantity) VALUES (@last_id_in_product, '15');
