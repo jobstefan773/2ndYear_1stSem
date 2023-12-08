@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class NodeGraph {
+public class BST {
 
     ArrayList<Character> nodes;
     int[][] graphMatrix;
 
-    public NodeGraph(int size) {
+    public BST(int size) {
         nodes = new ArrayList<>();
         graphMatrix = new int[size][size];
     }

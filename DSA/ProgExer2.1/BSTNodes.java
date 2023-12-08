@@ -1,7 +1,7 @@
-public class Nodes {
+public class BSTNodes {
     protected char object;
-    protected Nodes left, right;
-    public Nodes(char x){
+    protected BSTNodes left, right;
+    public BSTNodes(char x){
         this.object = x;
         left = right = null;
     }
