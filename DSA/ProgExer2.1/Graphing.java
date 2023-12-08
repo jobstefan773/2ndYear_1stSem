@@ -1,26 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package graphing;
-/**
- *
- * @author jgfabul
- */
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Graphing {
 
     public static void main(String[] args) throws FileNotFoundException {
-        File newFile = new File("C:\\Users\\johnf\\Documents\\NetBeansProjects\\Graphs\\src\\graphing\\graph.txt");
-        Scanner valuesInput = new Scanner(newFile);
+        File file = new File("graph.txt");
+        Scanner fileReader = new Scanner(file);
         ArrayList<String> placeHolder = new ArrayList<>();
 
-        while (valuesInput.hasNext()) {
-            placeHolder.add(valuesInput.nextLine());
+        while (fileReader.hasNext()) {
+            placeHolder.add(fileReader.nextLine());
         }
 
         NodeGraph newGraph = new NodeGraph(placeHolder.size());
@@ -37,13 +26,15 @@ public class Graphing {
             }
         }
 
+        fileReader.close();
+
         Scanner userInput = new Scanner(System.in);
         System.out.print("Enter the starting vertex: ");
         char startVertex = userInput.next().charAt(0);
 
         int[] shortestDistances = newGraph.dijkstra(startVertex);
 
-        System.out.println("\nOutput format:");
+        System.out.println();
         System.out.println("Starting Vertex: " + startVertex);
         for (int i = 0; i < newGraph.nodes.size(); i++) {
             if (i != newGraph.nodes.indexOf(startVertex)) {
@@ -57,5 +48,7 @@ public class Graphing {
                 }
             }
         }
+
+        userInput.close();
     }
 }
